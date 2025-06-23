@@ -1,0 +1,18 @@
+[package]
+name = "secure_openaiapi"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "secure_openaiapi"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.25.1", features = ["extension-module"] }
+libsodium-sys = "0.2.7"
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0.140"
+reqwest = { version = "0.12.20", features = ["blocking", "json"] }
+tokio = { version = "1.45.1", features = ["full"] }
+zeroize = { version = "1.8.1", features = ["zeroize_derive"] }
